@@ -1,0 +1,15 @@
+.artigo {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, transparent, lightgrey, transparent);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+/*background-image: radial-gradient(circle at bottom right,
+    yellow,
+    yellow 20%,
+    black 20%,
+    black 30%,
+    yellow 30%,
+    yellow);*/

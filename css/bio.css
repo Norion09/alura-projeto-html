@@ -37,6 +37,14 @@ h2{
 body{
     line-height: 1.1;/*espaçamento entre linhas*/
 }
+.container > p::first-letter {
+    font-size: 140%;
+    font-weight: bold;
+    color: #3C1D3D;
+    text-shadow: 1px 1px #000;
+    margin-right: .2ch;
+    line-height: 1;
+}
 p{
     text-align: justify;
     margin-top: 1em;/*20px*/
@@ -55,20 +63,45 @@ blockquote{
     float:  right; /*tirar um elemento do fluxo e permiti que ele "flutue" ao redor do conteudo*/
     font-size: 
 }/*em = pega o tamanho da fonte do navegador*//*ch = largura do caracter da fonte*//*rem pega a altura da fonte*/
-.citacao1{
+blockquote:nth-of-type(odd)/*pega os elementos impar do blockquote*/
+{
     float:  right; /*tirar um elemento do fluxo e permiti que ele "flutue" ao redor do conteudo*/
     margin-right: 0;
 }
-.citacao2{
-    float:  left; /*tirar um elemento do fluxo e permiti que ele "flutue" ao redor do conteudo*/
+blockquote:nth-of-type(even)/*pega os elementos pare de blockquote*/
+{
+    float: left;/*tirar um elemento do fluxo e permiti que ele "flutue" ao redor do conteudo*/
+    margin-right: 2em;
     margin-left: 0;
 }
+blockquote:before {
+    content: '"';
+    font-family: cursive;
+    font-size: 10em;
+    position: absolute;
+    color: #bbb;
+    line-height: 0.7;
+}/*coloca " aspas " no blockquote*/
+.citacao > p {
+    position: relative;
+}/*coloca o texto afrente das aspas*/
+.citacao:nth-of-type(odd):hover,.citacao:nth-of-type(odd):focus {
+    transform: scale(1.2) rotate(5deg);
+}
+.citacao:nth-of-type(even):hover,.citacao:nth-of-type(even):focus {
+    transform: scale(1.2) rotate(-5deg);
+}
+.citacao:hover,.citacao:focus{
+     box-shadow: 0 0 0 99999px rgba(0,0,0,.8);
+}
+/*-----------------------------------------------------------------*/
 aside h1{
     font-size: 150%;/*30px*/
     margin-bottom: 1.25em;/*25px*/
 }
 .icones-sociais  li{
     display: inline-block;/*block = empilhar => stacklayout // line = deixa os itens em uma linha*/
+    position: relative;
 }/*.nome-class pega a tag somente da class emq eu está*//*#icones-sociais li //#nome-id pega o tag somente da id solecionada*/
 .icones-sociais a{
     height: 2em;/*40px*/
@@ -79,9 +112,31 @@ aside h1{
     /*font-size: 0px;*/
     margin-top: 0.5em;
 }
-.github {background-image: url(img/github.png);}/*image replacement*/
-.linkedin {background-image: url(img/linkedin.png);}/*image replacement*/
-.twitter {background-image: url(img/twitter.png);}/*image replacement*/
+.github {background-image: url(../img/github.png);}/*image replacement*/
+.linkedin {background-image: url(../img/linkedin.png);}/*image replacement*/
+.twitter {background-image: url(../img/twitter.png);}/*image replacement*/
+.icones-sociais a:hover::after, .icones-sociais a:focus::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    text-indent: 0;
+    width: 300%;
+    background: black;
+    padding: 0.2em;
+    font-size: .75em;
+    border-radius: 5px;
+}/*balão dos icones*/
+.icones-sociais a:hover::before,.icones-sociais a:focus::before{
+    content: '';
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(.5em) rotate(45deg);
+}/*"perna" do balão*/
 .social-radape{
     margin: 3em;/*60px*/
 }
@@ -98,6 +153,9 @@ nav a {
 main a{
     color: #851944;
 }
+main a:hover,main a:focus{
+    color: red;
+}/*link aparece com cor vermelha quando o mouse é posto em cima*/
 aside a {
     color: inherit; /*herda o valor do elemento pai*/
     font-family: "Open Sans Condensed";

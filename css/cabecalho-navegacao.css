@@ -4,6 +4,7 @@ aside, img
     border-left: 0.5em solid black;/*10px*/
     float: right;
     box-sizing: border-box; /*pega o tamanho do box inteiro incluindo (padding, margin e border) na hora de dimensionar o widht*/
+    
 }
 
 .minha-foto
@@ -31,3 +32,7 @@ main
     float: left;
     width: 85%;
 }
+
+.navegacao-site a:hover,navegacao-site a:focus{
+    text-shadow: 0 0 4px #FF1493;
+}/*coloca uma sombra nos botões qunado o mouse é posto em cima dos links*/

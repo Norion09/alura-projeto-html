@@ -36,6 +36,13 @@ div form button{
     background-color: #3d1d3e;
     color: white;
 }
-input[value="outro"]:checked ˜ input{
+input[value="outro"] ~ textarea {
+    display: none;
+}/*esconde o textarea quando o "outro" não estiver marcado*/
+input[value="outro"]:checked ~ textarea {
     display: inline;
+}/*mostra o textarea qunado o "outro" estiver marcado*/
+textarea{
+    padding: 0;
+    margin: 0;
 }

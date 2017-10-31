@@ -321,6 +321,9 @@ footer {
 footer a {
     color: #F99;
 }
+footer p{
+    margin: 0;
+}
 main {
     width: 100%;
     padding-bottom: 0;

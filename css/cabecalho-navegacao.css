@@ -21,7 +21,7 @@ aside, img
     padding: 1em;/* espaço interno*//*20px*/
     border-bottom: 0.5em solid black;/*10px*/
     border-left: 0.5em solid black;/*10px*/
-    width: 15%;
+    width: 13%;/*15%;/*calc(100% - 85%);*/
     position: fixed; /*absolute, sai do fluxo, relativo a janela*//*relativo, ele não sai do fluxo*/
     top: 16.1em;/*310px*/
     right: 0;
